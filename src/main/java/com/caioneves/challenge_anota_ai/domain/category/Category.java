@@ -21,4 +21,9 @@ public class Category {
 
     private String ownerId;
 
+    public Category(CategoryDTO category) {
+        this.title = category.title();
+        this.description = category.description();
+        this.ownerId = category.ownerId();
+    }
 }

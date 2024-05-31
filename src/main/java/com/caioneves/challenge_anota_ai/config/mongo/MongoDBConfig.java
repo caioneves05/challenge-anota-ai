@@ -8,14 +8,14 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 
 @Configuration
-public class MOngoDBConfig {
+public class MongoDBConfig {
 
     @Value("${mongo.uri}")
-    private String urlNotification;
+    private String mongoUri;
 
     @Bean
     public MongoDatabaseFactory mongoConfigure() {
-        return new SimpleMongoClientDatabaseFactory();
+        return new SimpleMongoClientDatabaseFactory(mongoUri);
     }
 
 

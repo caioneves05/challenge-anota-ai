@@ -1,6 +1,7 @@
 package com.caioneves.challenge_anota_ai.domain.product;
 
 import com.caioneves.challenge_anota_ai.domain.category.Category;
+import com.caioneves.challenge_anota_ai.domain.category.CategoryDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,7 +26,14 @@ public class Product {
 
     private Category category;
 
-    // Getters
+    public Product(ProductDTO product) {
+        this.title = product.title();
+        this.description = product.description();
+        this.ownerId = product.ownerId();
+        this.price = product.price();
+    }
+
+
     public String getId() {
         return id;
     }
@@ -50,7 +58,6 @@ public class Product {
         return category;
     }
 
-    // Setters
     public void setId(String id) {
         this.id = id;
     }

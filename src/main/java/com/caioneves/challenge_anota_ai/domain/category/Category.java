@@ -26,7 +26,6 @@ public class Category {
         this.ownerId = category.ownerId();
     }
 
-    // Getters
     public String getId() {
         return id;
     }
@@ -58,4 +57,5 @@ public class Category {
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
+    
 }

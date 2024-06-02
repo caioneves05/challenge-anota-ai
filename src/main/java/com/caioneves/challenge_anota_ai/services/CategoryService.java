@@ -7,6 +7,7 @@ import com.caioneves.challenge_anota_ai.repositories.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -44,5 +45,9 @@ public class CategoryService {
         Category category = this.categoryRepository.findById(id).orElseThrow(CategoryNotFoundException::new);
 
         this.categoryRepository.delete(category);
+    }
+
+    public Optional<Category> getById(String id) {
+        return this.categoryRepository.findById(id);
     }
 }
